@@ -22,8 +22,8 @@ jobs:
             -H "Client-Secret: ${{ secrets.INTRUCEPT_CLIENT_SECRET }}" \
             -F "projectZipFile=@project.zip" \
             -F "applicationId=${{ secrets.INTRUCEPT_APPLICATION_ID }}" \
-            -F "scanName=SCA Scan - ${{ github.sha }}" \
-            -F "language=javascript" \
+            -F "scanName=owaspwebgoat---php SCA Scan - ${{ github.sha }}" \
+            -F "language=php" \
             https://appsecops-api.intruceptlabs.com/api/v1/integrations/sca-scans)
           
           CAN_PROCEED=$(echo $RESPONSE | jq -r '.canProceed')
